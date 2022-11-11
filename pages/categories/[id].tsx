@@ -8,7 +8,6 @@ import PlaylistsRow from "../../components/playList/PlaylistsRow";
 import PlayListRowSkeleton from "../../components/skeleton/PlayListRowSkeleton";
 
 const CategoryPlayList = () => {
-  const { data: session } = useSession();
   const router = useRouter();
   const params = router.query.id;
   const { data: playlists, isLoading } = useQuery(

@@ -1,5 +1,4 @@
 import { Grid } from "@mui/material";
-import { useSession } from "next-auth/react";
 import React from "react";
 import { _getPlayListTracks } from "../../api";
 import Navbar from "../../components/Navbar";
@@ -11,7 +10,6 @@ import { useRouter } from "next/router";
 import PlayListItemSkeleton from "../../components/skeleton/PlayListItemSkeleton";
 
 const PlayListItemPage: React.FC = () => {
-  const { data: session } = useSession();
   const router = useRouter();
   const params = router.query.id;
 

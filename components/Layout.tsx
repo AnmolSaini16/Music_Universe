@@ -1,4 +1,3 @@
-import { Grid } from "@mui/material";
 import React from "react";
 import SideBar from "./SideBar";
 import styles from "../styles/HomePage.module.css";

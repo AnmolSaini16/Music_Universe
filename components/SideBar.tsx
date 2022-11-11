@@ -1,5 +1,3 @@
-import { Grid } from "@mui/material";
-import { signOut } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 import styles from "../styles/sidebar.module.css";

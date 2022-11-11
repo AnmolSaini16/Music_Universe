@@ -1,5 +1,5 @@
 import { NextPageContext } from "next";
-import { getSession, useSession } from "next-auth/react";
+import { getSession } from "next-auth/react";
 import {
   _currentUserPlayList,
   _featuredPlayLists,

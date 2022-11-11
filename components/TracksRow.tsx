@@ -1,4 +1,3 @@
-import { Grid } from "@mui/material";
 import React from "react";
 import { RiTimer2Line } from "react-icons/ri";
 import { millisToMinutesAndSeconds } from "../constants/utils";

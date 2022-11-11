@@ -1,8 +1,7 @@
-import React, { PropsWithChildren, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import { BsSearch } from "react-icons/bs";
 import styles from "../styles/searchPage.module.css";
-import { useSession } from "next-auth/react";
 import { _getSearchResults } from "../api";
 import { useMutation } from "react-query";
 import PlayListRowSkeleton from "../components/skeleton/PlayListRowSkeleton";
@@ -10,15 +9,10 @@ import SeachPage from "../components/SeachPage";
 import BrowsePage from "../components/BrowsePage";
 
 const searchPage = () => {
-  const { data: session } = useSession();
   const [searchString, setSerchString] = useState<string | null>("");
   const [timer, setTimer] = useState<number | undefined>();
   const [loader, setLoader] = useState<boolean>(false);
   const [showCategories, setShowCategories] = useState<boolean>(true);
-
-  function InlineWrapperWithMargin({ children }: PropsWithChildren<unknown>) {
-    return <span style={{ marginRight: "0.5rem" }}>{children}</span>;
-  }
 
   const mutation = useMutation(
     async () => await _getSearchResults(searchString)
