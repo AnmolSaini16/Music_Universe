@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const error = () => {
+const Error = () => {
   useEffect(() => {
     window.location.replace("/");
   });
@@ -11,4 +11,4 @@ const error = () => {
   );
 };
 
-export default error;
+export default Error;

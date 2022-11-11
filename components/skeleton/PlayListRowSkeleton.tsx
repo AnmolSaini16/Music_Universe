@@ -11,8 +11,8 @@ const PlayListRowSkeleton: React.FC<props> = ({ skeletonLength }) => {
   let length = Array.from(Array(skeletonLength).keys());
   return (
     <div className={styles.skeletonRowContaner}>
-      {length.map(() => (
-        <div className={styles.skeletonRowItem}>
+      {length.map((index: number) => (
+        <div className={styles.skeletonRowItem} key={index}>
           <div className={styles.skeletonRowImage}>
             <Skeleton
               count={1}

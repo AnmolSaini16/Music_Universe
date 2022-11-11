@@ -13,7 +13,7 @@ const TracksRow: React.FC<props> = ({ title, tracks }) => {
       <h3>{title}</h3>
       <div className={styles.tracksRow}>
         {tracks.map((item: any) => (
-          <div className={styles.trackItem}>
+          <div className={styles.trackItem} key={item?.name}>
             <img src={item.album.images[0]?.url} />
             <h4>{item.name}</h4>
             <p>{item.artists[0]?.name}</p>

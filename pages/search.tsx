@@ -8,7 +8,7 @@ import PlayListRowSkeleton from "../components/skeleton/PlayListRowSkeleton";
 import SeachPage from "../components/SeachPage";
 import BrowsePage from "../components/BrowsePage";
 
-const searchPage = () => {
+const SearchPage = () => {
   const [searchString, setSerchString] = useState<string | null>("");
   const [timer, setTimer] = useState<number | undefined>();
   const [loader, setLoader] = useState<boolean>(false);
@@ -73,4 +73,4 @@ const searchPage = () => {
   );
 };
 
-export default searchPage;
+export default SearchPage;

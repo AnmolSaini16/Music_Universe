@@ -53,7 +53,11 @@ const PlayListPopup: React.FC<props> = ({ playListItem, handleClose }) => {
             <h2 className={styles.trackName}>{playListItem.track.name}</h2>
             <div className={styles.playListPopupArtitst}>
               {playListItem.track.artists.map((item: any) => {
-                return <span className={styles.comma}>{item.name} </span>;
+                return (
+                  <span className={styles.comma} key={item?.name}>
+                    {item.name}{" "}
+                  </span>
+                );
               })}
             </div>
             <p> {playListItem.track.album.name || "-"}</p>

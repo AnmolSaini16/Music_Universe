@@ -13,7 +13,7 @@ const ArtistRow: React.FC<props> = ({ title, artists }) => {
       <div className={styles.artistsRow}>
         {artists.map((item: any) => {
           return (
-            <div className={styles.artistItem}>
+            <div className={styles.artistItem} key={item?.name}>
               <img src={`${item?.images[0]?.url}`} />
               <h4>{item?.name}</h4>
               <p>Artist</p>

@@ -19,7 +19,7 @@ const CategoriesRow: React.FC<props> = ({ categories, title, flexWrap }) => {
       >
         {categories.map((item: any) => {
           return (
-            <Link href={`/categories/${item.id}`}>
+            <Link href={`/categories/${item.id}`} key={item?.name}>
               <div className={styles.playListItem}>
                 <img src={`${item.icons[0].url}`} />
                 <h4>{generateShortName(item.name, 20)}</h4>
