@@ -8,7 +8,6 @@ interface props {
   playListItem: any;
   index: number;
 }
-
 const PlayListItem: React.FC<props> = ({ playListItem, index }) => {
   const [openPopup, setOpenPopup] = useState<boolean>(false);
 
