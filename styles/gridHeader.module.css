@@ -1,0 +1,43 @@
+.gridHeader {
+    color: #989B9E;
+    font-size: 0.8rem
+}
+
+.headerLine {
+    border: none;
+    margin-bottom: 14px;
+    height: 0.4px;
+    background-color: #989B9E; 
+}
+
+.heading {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.heading > img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.headingRight {
+    padding-left: 20px;
+}
+.headingRight > h5 {
+    color: #989B9E; 
+    margin: 20px 0;
+    font-size: 0.8rem;
+}
+
+.headingRight > h1 {
+    font-size: 5rem;
+    margin-bottom: 50px;
+}
+
+.headingRight > p {
+    color: #989B9E; 
+    margin: 10px 0;
+}

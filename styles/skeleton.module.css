@@ -1,0 +1,42 @@
+/* Skeleton Row */
+
+.skeletonRowContaner {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.skeletonRowItem {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 14px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    background-color: #1f1f1f4a;
+    max-width: 160px;
+    height: auto;
+}
+
+.skeletonRowImage {
+   margin-bottom: 14px;
+}
+
+.skeletonRowItem > p {
+    padding: 4px 0;
+}
+
+
+/* Skeleton Item */
+
+.skeletonItemContaner {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.skeletonItemRight {
+   padding-left: 20px;
+}
+
+.skeletonItemRight > p{
+    margin: 10px 0;
+}

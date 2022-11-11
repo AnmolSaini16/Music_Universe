@@ -1,0 +1,24 @@
+.loginPage {
+    height: 100vh;
+    background-image: url('/images/loginPageBG.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.loginButton {
+    margin: 40px 0;
+    background: whitesmoke;
+    color: black;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+.loginButton:hover {
+    background-color: #dbdbdb;
+}
+

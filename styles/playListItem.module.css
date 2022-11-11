@@ -1,0 +1,53 @@
+.playListItem {
+    padding: 10px 10px;
+    transition: all 0.2s;
+}
+.playListItem:hover {
+    background-color: #414141;
+    cursor: pointer;
+}
+
+.playListImage {
+    height: 45px;
+    width: 45px;
+    margin-right: 20px;
+}
+
+.trackName {
+    font-weight: bold;
+}
+
+.playListSingers {
+    display: flex;
+    color: #989B9E;
+    font-size: 0.9rem;
+    padding-top: 6px;
+}
+.playListNumber {
+    width: 40px;
+    text-align: start;
+}
+
+
+  .comma:first-child:empty ~ .comma:not(:empty) {
+    margin-left: 0;  
+  }
+  
+ 
+  .comma:empty {
+    display: none;
+  }
+  
+  .comma:not(:first-child):before {
+    content: ", ";
+  }
+  
+  .comma:empty + .comma:not(:empty):before {
+    content : "";
+  }
+  
+  .comma:not(:empty) ~ .comma:empty + .comma:not(:empty):before {
+    content : ", ";
+  }
+
+
