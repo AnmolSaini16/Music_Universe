@@ -31,7 +31,10 @@ function MyApp({
   };
   return (
     <QueryClientProvider client={queryClient}>
-      <SessionProvider session={pageProps.session}>
+      <SessionProvider
+        session={pageProps.session}
+        baseUrl={process.env.NEXTAUTH_URL}
+      >
         <NextNProgress color="#1BD760" height={2} />
         {getContent()}
       </SessionProvider>

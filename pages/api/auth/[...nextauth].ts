@@ -72,9 +72,36 @@ declare module "next-auth/jwt" {
 }
 const refreshAccessToken = async (token: JWT) => {
   try {
-    return token;
+    const url =
+      `${process.env.NEXTAUTH_URL}/refresh` +
+      new URLSearchParams({
+        client_id: process.env.NEXT_CLIENT_ID || "",
+        client_secret: process.env.NEXT_CLIENT_SECRET || "",
+        grant_type: "refresh_token",
+        refresh_token: token.refreshToken,
+      });
+
+    const response = await fetch(url, {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      method: "POST",
+    });
+
+    const refreshedTokens = await response.json();
+
+    if (!response.ok) {
+      throw refreshedTokens;
+    }
+
+    return {
+      ...token,
+      accessToken: refreshedTokens.access_token,
+      accessTokenExpires: Date.now() + refreshedTokens.expires_in * 1000,
+    };
   } catch (error) {
     console.log("Token expired");
+    console.log(error);
     return {
       ...token,
       error: "RefreshAccessTokenError",
@@ -88,10 +115,9 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.NEXT_CLIENT_SECRET || "",
     }),
   ],
-  secret: process.env.NEXT_PUBLIC_SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt",
-    maxAge: 10 * 60 * 60, // 10 hours
   },
   pages: {
     signIn: "/auth/login",
