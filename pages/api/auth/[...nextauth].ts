@@ -133,7 +133,6 @@ export const authOptions: NextAuthOptions = {
         token.user = user;
         return token;
       }
-
       // Return previous token if the access token has not expired yet
       if (Date.now() < token.accessTokenExpired) {
         console.log("old token");
