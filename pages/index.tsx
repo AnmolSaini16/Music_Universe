@@ -77,11 +77,18 @@ export async function getServerSideProps(context: NextPageContext) {
       },
     };
   } catch (error) {
+    //@ts-ignore
+    if (error.response.status === 401) {
+      //// Unauthorised
+      return {
+        redirect: {
+          destination: "/auth/login",
+          permanent: false,
+        },
+      };
+    }
     return {
-      redirect: {
-        destination: "/auth/login",
-        permanent: false,
-      },
+      props: {},
     };
   }
 }
