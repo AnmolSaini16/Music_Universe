@@ -5,11 +5,16 @@ import { _getCategories } from "../api";
 import CategoriesRow from "./categories/CategoriesRow";
 import PlayListRowSkeleton from "./skeleton/PlayListRowSkeleton";
 
-const BrowsePage = () => {
+interface props {
+  searchPage: boolean;
+}
+
+const BrowsePage: React.FC<props> = ({ searchPage }) => {
   const { data: session } = useSession();
   const { data: categoriesData, isLoading } = useQuery(
     ["getAllCategory", "categoiriesData"],
-    async () => await _getCategories(session?.accessToken as string, 20)
+    async () =>
+      await _getCategories(session?.accessToken as string, searchPage ? 14 : 40)
   );
   const allCategories = categoriesData?.data;
   return (

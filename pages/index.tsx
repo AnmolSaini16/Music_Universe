@@ -48,6 +48,7 @@ export default HomePage;
 export async function getServerSideProps(context: NextPageContext) {
   try {
     const session = await getSession({ req: context.req });
+    console.log(session?.accessToken);
     if (!session?.user || session.error === "RefreshAccessTokenError") {
       return {
         redirect: {
@@ -66,7 +67,7 @@ export async function getServerSideProps(context: NextPageContext) {
 
     const getServeralCategories = await _getCategories(
       session?.accessToken as string,
-      7
+      14
     );
 
     return {

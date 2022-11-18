@@ -7,10 +7,10 @@
 
 .loginButton {
     margin: 40px 0;
-    background: whitesmoke;
+    background: rgba(217, 217, 217, 0.6);;
     color: black;
     padding: 20px 40px;
-    border: none;
+     border: none;
     border-radius: 50px;
     font-weight: bold;
     font-size: 1rem;
@@ -19,6 +19,6 @@
     transition: all 0.5s;
 }
 .loginButton:hover {
-    background-color: #dbdbdb;
+    background-color: #1BD760;
 }
 

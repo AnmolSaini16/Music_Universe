@@ -8,7 +8,7 @@ const browse: React.FC = () => {
     <>
       <Navbar showHeader={false} />
       <h1>Browse All Categories</h1>
-      <BrowsePage />
+      <BrowsePage searchPage={false} />
     </>
   );
 };

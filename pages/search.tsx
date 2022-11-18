@@ -54,7 +54,7 @@ const SearchPage = () => {
       {showCategories && (
         <div>
           <h1>Browse Categories</h1>
-          <BrowsePage />
+          <BrowsePage searchPage={true} />
         </div>
       )}
 
