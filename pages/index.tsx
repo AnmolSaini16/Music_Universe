@@ -79,6 +79,8 @@ export async function getServerSideProps(context: NextPageContext) {
     };
   } catch (error) {
     //@ts-ignore
+    console.log("error called", error);
+    //@ts-ignore
     if (error.response.status === 401) {
       //// Unauthorised
       return {
