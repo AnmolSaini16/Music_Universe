@@ -7,7 +7,8 @@ const getToken = async () => {
 };
 
 /////Index page API's///////
-export const _featuredPlayLists = async (token: string) => {
+export const _featuredPlayLists = async () => {
+  const token = await getToken();
   const data = await axios.get(
     `https://api.spotify.com/v1/browse/featured-playlists?country=IN&locale=sv_SE&timestamp=2014-10-23T09%3A00%3A00.000Z&limit=20&offset=5`,
     {
@@ -19,7 +20,8 @@ export const _featuredPlayLists = async (token: string) => {
   return data;
 };
 
-export const _getCategories = async (token: string, limit: number) => {
+export const _getCategories = async (limit: number) => {
+  const token = await getToken();
   return await axios.get(
     `https://api.spotify.com/v1/browse/categories?country=IN&locale=sv_SE&limit=${limit}&offset=5`,
     {
@@ -30,7 +32,8 @@ export const _getCategories = async (token: string, limit: number) => {
   );
 };
 
-export const _currentUserPlayList = async (token: string) => {
+export const _currentUserPlayList = async () => {
+  const token = await getToken();
   const data = await axios.get(`https://api.spotify.com/v1/me/playlists`, {
     headers: {
       Authorization: `Bearer ${token}`,
