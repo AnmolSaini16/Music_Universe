@@ -1,4 +1,3 @@
-import { useSession } from "next-auth/react";
 import React from "react";
 import { useQuery } from "react-query";
 import { _getCategories } from "../api";
@@ -10,11 +9,9 @@ interface props {
 }
 
 const BrowsePage: React.FC<props> = ({ searchPage }) => {
-  const { data: session } = useSession();
   const { data: categoriesData, isLoading } = useQuery(
     ["getAllCategory", "categoiriesData"],
-    async () =>
-      await _getCategories(session?.accessToken as string, searchPage ? 14 : 40)
+    async () => await _getCategories(searchPage ? 14 : 40)
   );
   const allCategories = categoriesData?.data;
   return (

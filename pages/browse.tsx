@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import { _getCategories } from "../api";
 import BrowsePage from "../components/BrowsePage";
 
 const browse: React.FC = () => {

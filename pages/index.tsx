@@ -13,7 +13,9 @@ import PlayListRowSkeleton from "../components/skeleton/PlayListRowSkeleton";
 
 const HomePage: React.FC = () => {
   const { data: featuredPlaylistsData, isLoading: featuredPlaylistsLoading } =
-    useQuery(["getFeaturedPlayList"], async () => await _featuredPlayLists());
+    useQuery(["getFeaturedPlayList"], async () => await _featuredPlayLists(), {
+      refetchInterval: Infinity,
+    });
 
   const {
     data: currentUserPlayListData,

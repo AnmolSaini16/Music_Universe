@@ -22,12 +22,12 @@ const Navbar: React.FC<props> = ({ showHeader }) => {
   const getCurrentStatus = () => {
     const currentTime = new Date().getHours();
     if (currentTime < 12) {
-      return `Good morning, ${session?.user.name}`;
+      return `Good morning, ${session?.user.name || "......"}`;
     }
     if (currentTime >= 12 && currentTime < 17) {
-      return `Good afternoon, ${session?.user.name}`;
+      return `Good afternoon, ${session?.user.name || "......"}`;
     }
-    return `Good evening, ${session?.user.name}`;
+    return `Good evening, ${session?.user.name || "......"}`;
   };
 
   return (
