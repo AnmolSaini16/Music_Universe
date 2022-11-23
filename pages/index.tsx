@@ -10,8 +10,16 @@ import Navbar from "../components/Navbar";
 import PlaylistsRow from "../components/playList/PlaylistsRow";
 import { useQuery } from "react-query";
 import PlayListRowSkeleton from "../components/skeleton/PlayListRowSkeleton";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const HomePage: React.FC = () => {
+  const { data: session, status: loading } = useSession();
+  const router = useRouter();
+  useEffect(() => {
+    if (!session?.user && loading === "unauthenticated")
+      router.push("/auth/login");
+  }, [session]);
   const { data: featuredPlaylistsData, isLoading: featuredPlaylistsLoading } =
     useQuery(["getFeaturedPlayList"], async () => await _featuredPlayLists(), {
       refetchInterval: Infinity,
@@ -71,16 +79,16 @@ const HomePage: React.FC = () => {
 
 export default HomePage;
 
-export async function getServerSideProps(context: NextPageContext) {
-  const session = await getSession({ req: context.req });
-  if (!session?.user || session.error === "RefreshAccessTokenError") {
-    console.log("no user");
-    return {
-      redirect: {
-        destination: "/auth/login",
-        permanent: false,
-      },
-    };
-  }
-  return { props: {} };
-}
+// export async function getServerSideProps(context: NextPageContext) {
+//   const session = await getSession({ req: context.req });
+//   if (!session?.user || session.error === "RefreshAccessTokenError") {
+//     console.log("no user");
+//     return {
+//       redirect: {
+//         destination: "/auth/login",
+//         permanent: false,
+//       },
+//     };
+//   }
+//   return { props: {} };
+// }
